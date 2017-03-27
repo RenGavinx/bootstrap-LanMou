@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+  
+    <!-- 引入Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- 最低支持到IE8 -->
+    <!-- html5 shim 和 Respond.js 用于让IE8支持html5元素和媒体查询 -->
+    <!-- 注意:通过file://协议，引入的responds.js文件，不能起效果 -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: "微软雅黑";
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: #fff;
+            border: none;
+            margin-bottom: 0px;
+        }
+        #mynavbar .active a {
+          background: #0ecacb !important;
+        }
+        .logo {
+            padding:0;
+        }
+        .logo img {
+            width: 80%;
+        }
+        .navbar button {
+            background: #0ecacb;
+        }
+        button span.icon-bar {
+            background-color:#fff !important;
+        }
+        button span.icon-bar:hover {
+            background-color:#fff !important;
+        }
+        nav ul li {
+            text-align: center;
+            margin-left: 1px;
+            margin-top: 1px;
+        }
+        nav ul li:hover {
+            background: #0ecacb;
+        }
+        nav ul li a:hover {
+            color:#fff !important;
+        }
+        .carousel-inner img {
+            margin:0 auto;
+        }
+        .jumbotron .container>p,.jumbotron {
+            margin:0;
+            padding: 0;
+            font-size: 16px;
+        }
+        .jumbotron .container {
+            padding-top: 35px;
+            padding-bottom: 10px;
+        }
+        .fl {
+            float: left;
+        }
+        .fr {
+            float: right;
+        }
+        .table1 {
+            background: #f0f2f1;
+            padding-bottom: 15px;
+        }
+        .table1 .container {
+            padding-top: 15px;
+        }
+        .table1 p,h1,h2,h3,h4,h5,h6 {
+            margin:0;
+            padding:0;
+        }
+        h6 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .summary {
+            font-size: 10px;
+            margin-top: 5px !important;
+        }
+        .imgbg {
+            background: #ddd;
+            padding: 40px 0;
+        }
+        .mg {
+            margin-top: 10px;
+            color:#ddd;
+        }
+        .imgbg img {
+            display: block;
+            margin:0 auto;
+        }
+        .textbg {
+            background: #fff;
+        }
+        p.text {
+            margin-top: 10px;
+            color: #ddd;
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .border {
+           
+            border:1px solid #fff;
+            border-bottom: none;
+            transition: 1s;
+            
+        }
+        .table2 {
+            background: #e6e6e6;
+            padding-bottom: 10px
+        }
+        .button {
+            width:80px;
+            height: 30px;
+            line-height: 30px;
+            background: aqua;
+            text-align: center;
+            color:#fff;
+            cursor: pointer;
+        }
+        .col-md-3 .row h4 {
+            font-size: 14px;
+            text-align: center;
+        }
+        .table3 {
+            background: #f0f2f1;
+            padding-bottom: 10px;
+        }
+        .table4 {
+            background: aqua;
+            padding-bottom: 10px;
+        }
+        .newsBg {
+            background: #fff;
+            margin-bottom: 20px;
+        }
+        .table5 {
+            background: #e6e6e6;
+            padding-bottom: 20px;
+        }
+        textarea {
+            max-width: 100%;
+            max-height: 104px;
+            min-width: 100%;
+        }
+        footer {
+          background: #333;
+          margin-top: 10px;
+        }
+        footer li a {
+          color:#888;
+        }
+        footer p {
+          color:#666;
+          margin:0;
+          text-align: center;
+        }
+        footer .fpd {
+          margin-top: 18px;
+        }
+        footer .container {
+          padding:10px 0;
+        }
+        @media (max-width: 768px) {
+          footer p {
+            text-align: left;
+          }
+        }
+    </style>
+  </head>
+  <body>
+  <!-- 导航开始 -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand logo"><img src="./images/logo.jpg" alt=""></a>
+                <button type="button" data-toggle="collapse" class="navbar-toggle" data-target="#mynavbar" id="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                
+                </button>   
+            </div>
+            <div id="mynavbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="./作业.html">首页</a></li>
+                    <li><a href="./关于页.html">关于</a></li>
+                    <li><a href="./服务页.html">服务</a></li>
+                    <li><a href="./案例.html">案例</a></li>
+                    <li><a href="./资讯页.html">行业资讯</a></li>
+                    <li><a href="./联系页.html">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- 轮播开始 -->
+    <div id="mycarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+    <ol class="carousel-indicators">
+    <!-- 使用data-slide-to 来向轮播图传递一个滑动索引，索引从0开始计算 -->
+      <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#mycarousel" data-slide-to="1"></li>
+      <li data-target="#mycarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- carousel-inner代表切换的轮播图 -->
+    <div class="carousel-inner">
+      <div class="item active"><img src="images/a.png" alt=""></div>
+      <div class="item"><img src="images/b.png" alt=""></div>
+      <div class="item"><img src="images/c.png" alt=""></div>
+    </div>
+     <!-- carousel-control代表切换的控制按钮 -->
+     <!-- data-slide="previous/next"来实现左右滚动控制 -->
+    <a href="#mycarousel" class="carousel-control left" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a href="#mycarousel" class="carousel-control right" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>  
+  </div>
+  <div class="table1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+              <h5><a href="">服务领域</a></h5>
+              <h6>服务领域</h6>
+              <h6>Service area</h6>
+              <p class="summary">蓝眸视觉一向秉承以创意为核心，提升企业品牌形象价值是我们最根本的目的，在合理解决视觉设计的基础上，我们更加注重用户体验</p>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12 mg change">
+                <div class="container-fluid">
+                    <div class="row border">
+                        <div class="col-md-12 imgbg">
+                            <img src="./images/cirl_1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="row textbg">
+                        <div class="col-md-12">
+                            <h4 class="mg h4color">品牌网站Web设计</h4>
+                            <p class="text">企业网站的高度定制和开发,设计出更佳商业化、国际化的专业网站</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 mg change">
+                <div class="container-fluid">
+                    <div class="row border">
+                        <div class="col-md-12 imgbg">
+                            <img src="./images/cirl_2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="row textbg">
+                        <div class="col-md-12">
+                            <h4 class="mg h4color">品牌网站Web设计</h4>
+                            <p class="text">企业网站的高度定制和开发,设计出更佳商业化、国际化的专业网站</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 mg change">
+                <div class="container-fluid">
+                    <div class="row border">
+                        <div class="col-md-12 imgbg">
+                            <img src="./images/cirl_3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="row textbg">
+                        <div class="col-md-12">
+                            <h4 class="mg h4color">品牌网站Web设计</h4>
+                            <p class="text">企业网站的高度定制和开发,设计出更佳商业化、国际化的专业网站</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 mg change">
+                <div class="container-fluid">
+                    <div class="row border">
+                        <div class="col-md-12 imgbg">
+                            <img src="./images/cirl_4.png" alt="">
+                        </div>
+                    </div>
+                    <div class="row textbg">
+                        <div class="col-md-12">
+                            <h4 class="mg h4color">品牌网站Web设计</h4>
+                            <p class="text">企业网站的高度定制和开发,设计出更佳商业化、国际化的专业网站</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+  <div class="table2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+               <dl style="color: #5c5c5c;">
+                  <dt style="margin-top: 10px">
+                       经典案例
+                  </dt>
+                    <dd>
+                       classical case
+                    </dd>
+               </dl>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h6 style="color:#a6a6a6;margin-bottom: 2px">Web端界面设计</h6>
+            </div>
+        </div>
+       <div class="row">
+           <div class="col-md-3 col-sm-6 col-xs-12 mg" >
+               <a href=""><img src="./images/gg_01.jpg" alt="" style="width: 100%;"></a>
+           </div>
+           <div class="col-md-3 col-sm-6 col-xs-12 mg" >
+               <a href=""><img src="./images/gg_02.jpg" alt="" style="width: 100%"></a>
+           </div>
+           <div class="col-md-3 col-sm-6 col-xs-12 mg" >
+               <a href=""><img src="./images/gg-03.png" alt="" style="width: 100%"></a>
+           </div>
+           <div class="col-md-3 col-sm-6 col-xs-12 mg">
+               <a href=""><img src="./images/gg_4.jpg" alt="" style="width: 100%"></a>
+           </div>
+       </div>
+       <div class="row" style="padding-top: 15px">
+            <div class="col-md-12">
+                <h6 style="color:#a6a6a6;margin-bottom: 2px">移动端界面设计</h6>
+            </div>
+        </div>
+       <div class="row">
+           <div class="col-md-3 col-sm-6 col-xs-12 mg" >
+               <a href=""><img src="./images/image_03.jpg" alt="" style="width: 100%;"></a>
+           </div>
+           <div class="col-md-3 col-sm-6 col-xs-12 mg" >
+               <a href=""><img src="./images/image_05.jpg" alt="" style="width: 100%"></a>
+           </div>
+           <div class="col-md-3 col-sm-6 col-xs-12 mg" >
+               <a href=""><img src="./images/image_09.jpg" alt="" style="width: 100%"></a>
+           </div>
+           <div class="col-md-3 col-sm-6 col-xs-12 mg">
+               <a href=""><img src="./images/image_07.jpg" alt="" style="width: 100%"></a>
+           </div>
+       </div>
+       <div class="row" style="padding-top: 15px">
+            <div class="col-md-12">
+                <h6 style="color:#a6a6a6;margin-bottom: 2px">平面设计</h6>
+            </div>
+        </div>
+       <div class="row">
+           <div class="col-md-3 col-sm-6 col-xs-12 mg">
+               <a href=""><img src="./images/sm-09.jpg" alt="" style="width: 100%;margin-bottom: -1px"></a>
+           </div>
+           <div class="col-md-3 col-sm-6 col-xs-12 mg" >
+               <a href=""><img src="./images/sm-10.jpg" alt="" style="width: 100%" class="img-responsive"></a>
+           </div>
+           <div class="col-md-3 col-sm-6 col-xs-12 mg" >
+               <a href=""><img src="./images/sm-11.jpg" alt="" style="width: 100%"></a>
+           </div>
+           <div class="col-md-3 col-sm-6 col-xs-12 mg">
+               <a href=""><img src="./images/sm-12.jpg" alt="" style="width: 100%"></a>
+           </div>
+       </div>
+    </div>
+  </div>
+  <div class="table3">
+      <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                   <dl style="color: #5c5c5c;">
+                      <dt style="margin-top: 10px">
+                           优势所在
+                      </dt>
+                        <dd>
+                           Advantage place
+                        </dd>
+                   </dl>
+                </div>
+             </div>
+             <div class="row">
+                 <div class="col-md-6 col-sm-6 mg">
+                     <a href=""><img src="./images/big-01.jpg" alt="" style="width: 100%"></a>
+                 </div>
+                 <div class="col-md-6 col-sm-6 mg">
+                     <a href=""><img src="./images/big-02.jpg" alt="" style="width: 100%"></a>
+                 </div>
+             </div>
+             <div class="row mg">
+                 <div class="col-md-6 col-sm-6 mg">
+                     <a href=""><img src="./images/big-03.jpg" alt="" style="width: 100%"></a>
+                 </div>
+                 <div class="col-md-6 col-sm-6 mg">
+                     <a href=""><img src="./images/big-04.jpg" alt="" style="width: 100%"></a>
+                 </div>
+             </div>
+      </div>
+  </div>
+  <div class="table4">
+      <div class="container">
+          <div class="row">
+                <div class="col-md-12">
+                    <dl style="color: #5c5c5c;">
+                        <dt style="margin-top: 10px">
+                       行业资讯
+                        </dt>
+                        <dd>
+                       Industy information
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <a href=""><img src="./images/xyzx-01.jpg" alt="" class="img-responsive" style="width: 100%"></a>
+                        </div>
+                        <div class="row newsBg" style="padding:10px;">
+                            <h6 style="margin-top:10px">臻美升级，OPPO R9全面测评</h6>
+                            <p style="font-size: 10px; margin:0">此次OPPO R9采用极窄边框的设计,正面指纹识别模块,1600万美艳相机</p>
+                            <span style="font-size: 10px;padding-right: 4px">发表于2017-6-5</span>
+                            <span style="font-size: 10px;padding-right: 4px">5人看过</span>
+                            <span style="font-size: 10px">1人分享</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <a href=""><img src="./images/xyzx-02.jpg" alt="" class="img-responsive" style="width: 100%"></a>
+                        </div>
+                        <div class="row newsBg" style="padding:10px;">
+                            <h6 style="margin-top:10px">臻美升级，OPPO R9全面测评</h6>
+                            <p style="font-size: 10px; margin:0">此次OPPO R9采用极窄边框的设计,正面指纹识别模块,1600万美艳相机</p>
+                            <span style="font-size: 10px;padding-right: 4px">发表于2017-6-5</span>
+                            <span style="font-size: 10px;padding-right: 4px">5人看过</span>
+                            <span style="font-size: 10px">1人分享</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <a href=""><img src="./images/xyzx-03.jpg" alt="" class="img-responsive" style="width: 100%"></a>
+                        </div>
+                        <div class="row newsBg" style="padding:10px;">
+                            <h6 style="margin-top:10px">臻美升级，OPPO R9全面测评</h6>
+                            <p style="font-size: 10px; margin:0">此次OPPO R9采用极窄边框的设计,正面指纹识别模块,1600万美艳相机</p>
+                            <span style="font-size: 10px;padding-right: 4px">发表于2017-6-5</span>
+                            <span style="font-size: 10px;padding-right: 4px">5人看过</span>
+                            <span style="font-size: 10px">1人分享</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <a href=""><img src="./images/xyzx-04.jpg" alt="" class="img-responsive" style="width: 100%"></a>
+                        </div>
+                        <div class="row newsBg" style="padding:10px;">
+                            <h6 style="margin-top:10px">臻美升级，OPPO R9全面测评</h6>
+                            <p style="font-size: 10px; margin:0">此次OPPO R9采用极窄边框的设计,正面指纹识别模块,1600万美艳相机</p>
+                            <span style="font-size: 10px;padding-right: 4px">发表于2017-6-5</span>
+                            <span style="font-size: 10px;padding-right: 4px">5人看过</span>
+                            <span style="font-size: 10px">1人分享</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+  </div>
+  <div class="table5">
+      <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+               <dl style="color: #5c5c5c;">
+                  <dt style="margin-top: 10px">
+                       联系我们
+                  </dt>
+                    <dd>
+                       content us
+                    </dd>
+               </dl>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="container-fluid">
+                    <div class="row" style="background: aqua;">
+                        <div class="col-md-6 col-sm-6" style="margin-top: 10px">
+                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="col-md-6 col-sm-6" style="margin-top: 10px">
+                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1"></div>
+                    </div>
+                    <div class="row" style="background: aqua;padding-bottom: 20px">
+                        <div class="col-md-12 col-xm-12" style="margin-top: 10px">
+                            <textarea class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10px">
+                            <button class="btn btn-info pull-right">提交留言</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4" style="font-size: 12px;">
+                <div class="row" style="margin-bottom: 25px">
+                    <div class="col-md-12">
+                        <span>💁</span>客服:400-886-3699
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 25px">
+                    <div class="col-md-12">
+                        <span>☎️</span>电话:0371-63993699
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 25px">
+                    <div class="col-md-12">
+                        <span>📠</span>传真:+86-755-63993699
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 25px">
+                    <div class="col-md-12">
+                        <span>📮</span>邮箱:blueeyes@163.com
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 25px">
+                    <div class="col-md-12">
+                        <span>🏠</span>地址:郑州市二七区升龙国际广场E座23号楼805室
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="./images/ewm.jpg" alt="" class="img-responsive">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p style="font-size: 12px;margin-top:5px">请扫描二维码关注官方微信公众号"蓝眸视觉"</p>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+  <!-- <div class="table2">
+      <div class="container">
+          <p class="fl">Web端界面设计</p>
+          <p class="fr button">查看更多</p>
+          <div class="row">
+              <div class="col-md-3"><a href=""><img src="./images/" alt=""></a></div>
+          </div>
+      </div>
+  </div> -->
+  <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12">
+            <a href=""><img src="./images/ff_1.jpg" alt=""></a>
+          </div>
+          <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 fpd">
+            <div class="row">
+                <div class="col-md-12">
+                  <ul class="list-inline">
+                    <li><a href="">蓝眸首页</a></li>
+                    <li><a href="">友情链接</a></li>
+                    <li><a href="">关于我们</a></li>
+                    <li><a href="">服务内容</a></li>
+                    <li><a href="">联系我们</a></li>
+                  </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>京IC备XXXXXX</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  </body>
+  <script>
+        var flag = 0;
+        $("#button").click(function(){
+            if (flag==0){
+                $(this).css("background","#ddd");
+                flag=1; 
+            }
+            else {
+                $(this).css("background","#0ecacb");
+                flag=0; 
+            }
+        })
+      function change() {
+        for (let i=0;i<4;i++) {
+            $(".change").eq(i).mouseover(function(){
+                $(".textbg").eq(i).css("background","aqua");
+                $(".imgbg img").eq(i).attr("src","./images/cirl_"+(i+1)+"_hover.png");
+                $(".imgbg").eq(i).css("background","#fff");
+                $(".border").eq(i).css("border-color","aqua");
+                $(".text").eq(i).css("color","#fff");
+                $(".h4color").eq(i).css("color","#fff");  
+                
+            })
+            $(".change").eq(i).mouseout(function(){
+                $(".textbg").eq(i).css("background","#fff");
+                $(".imgbg img").eq(i).attr("src","./images/cirl_"+(i+1)+".png");
+                $(".imgbg").eq(i).css("background","#ddd");
+                $(".border").eq(i).css("border-color","#fff");
+                $(".text").eq(i).css("color","#ddd"); 
+                $(".h4color").eq(i).css("color","#ddd");  
+            })
+        } 
+      }
+      change();
+  </script>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+  
+    <!-- 引入Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- 最低支持到IE8 -->
+    <!-- html5 shim 和 Respond.js 用于让IE8支持html5元素和媒体查询 -->
+    <!-- 注意:通过file://协议，引入的responds.js文件，不能起效果 -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: "微软雅黑";
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: #fff;
+            border: none;
+            margin-bottom: 0px;
+        }
+        .logo {
+            padding:0;
+        }
+        .logo img {
+            width: 80%;
+        }
+        .navbar button {
+            background: #0ecacb;
+        }
+        #mynavbar .active a {
+          background: #0ecacb !important;
+        }
+        button span.icon-bar {
+            background-color:#fff !important;
+        }
+        button span.icon-bar:hover {
+            background-color:#fff !important;
+        }
+        nav ul li {
+            text-align: center;
+            margin-left: 1px;
+            margin-top: 1px;
+        }
+        nav ul li:hover {
+            background: #0ecacb;
+        }
+        nav ul li a:hover {
+            color:#fff !important;
+        }
+        .carousel-inner img {
+            margin:0 auto;
+        }
+        .jumbotron .container>p,.jumbotron {
+            margin:0;
+            padding: 0;
+            font-size: 16px;
+        }
+        .jumbotron .container {
+            padding-top: 35px;
+            padding-bottom: 10px;
+        }
+        .fl {
+            float: left;
+        }
+        .fr {
+            float: right;
+        }
+        .table1 {
+            background: #e6e6e6;
+            padding-bottom: 20px;
+        }
+        textarea {
+            max-width: 100%;
+            max-height: 104px;
+            min-width: 100%;
+        }
+        h5 {
+          color:#555555;
+        }
+        h5+p{
+          color:#aaaaaa;
+        }
+         #dituContent {
+          margin-top: 30px;
+          height: 330px;
+         }
+        html,body {
+          margin:0;padding:0;
+        }
+        
+        .iw_poi_title {
+          color:#CC5522;
+          font-size:14px;
+          font-weight:bold;
+          overflow:hidden;
+          padding-right:13px;
+          white-space:nowrap
+        }
+        .iw_poi_content {
+          font:12px arial,sans-serif;
+          overflow:visible;
+          padding-top:4px;
+          white-space:-moz-pre-wrap;
+          word-wrap:break-word
+        }
+        footer {
+          background: #333;
+        }
+        footer li a {
+          color:#888;
+        }
+        footer p {
+          color:#666;
+          margin:0;
+          text-align: center;
+        }
+        footer .fpd {
+          margin-top: 18px;
+        }
+        footer .container {
+          padding:10px 0;
+        }
+        @media (max-width: 768px) {
+          footer p {
+            text-align: left;
+          }
+        }
+    </style>
+  </head>
+  <body>
+  <!-- 导航开始 -->
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand logo"><img src="./images/logo.jpg" alt=""></a>
+                <button type="button" data-toggle="collapse" class="navbar-toggle" data-target="#mynavbar" id="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                
+                </button>   
+            </div>
+            <div id="mynavbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./作业.html">首页</a></li>
+                    <li><a href="./关于页.html">关于</a></li>
+                    <li><a href="./服务页.html">服务</a></li>
+                    <li><a href="./案例.html">案例</a></li>
+                    <li><a href="./资讯页.html">行业资讯</a></li>
+                    <li class="active"><a href="./联系页.html">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- 轮播开始 -->
+    <div id="mycarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+    <ol class="carousel-indicators">
+    <!-- 使用data-slide-to 来向轮播图传递一个滑动索引，索引从0开始计算 -->
+      <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#mycarousel" data-slide-to="1"></li>
+      <li data-target="#mycarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- carousel-inner代表切换的轮播图 -->
+    <div class="carousel-inner">
+      <div class="item active"><img src="images/a.png" alt=""></div>
+      <div class="item"><img src="images/b.png" alt=""></div>
+      <div class="item"><img src="images/c.png" alt=""></div>
+    </div>
+     <!-- carousel-control代表切换的控制按钮 -->
+     <!-- data-slide="previous/next"来实现左右滚动控制 -->
+    <a href="#mycarousel" class="carousel-control left" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a href="#mycarousel" class="carousel-control right" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>  
+  </div>
+  <div class="table1">
+      <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+               <dl style="color: #5c5c5c;">
+                  <dt style="margin-top: 10px">
+                       联系我们
+                  </dt>
+                    <dd>
+                       content us
+                    </dd>
+               </dl>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="container-fluid">
+                    <div class="row" style="background: #0ecacb;">
+                        <div class="col-md-6 col-sm-6" style="margin-top: 10px">
+                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="col-md-6 col-sm-6" style="margin-top: 10px">
+                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1"></div>
+                    </div>
+                    <div class="row" style="background: #0ecacb;padding-bottom: 20px">
+                        <div class="col-md-12 col-xm-12" style="margin-top: 10px">
+                            <textarea class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10px">
+                            <button class="btn btn-info pull-right">提交留言</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4" style="font-size: 12px;">
+                <div class="row" style="margin-bottom: 25px">
+                    <div class="col-md-12">
+                        <span>💁</span>客服:400-886-3699
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 25px">
+                    <div class="col-md-12">
+                        <span>☎️</span>电话:0371-63993699
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 25px">
+                    <div class="col-md-12">
+                        <span>📠</span>传真:+86-755-63993699
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 25px">
+                    <div class="col-md-12">
+                        <span>📮</span>邮箱:blueeyes@163.com
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 25px">
+                    <div class="col-md-12">
+                        <span>🏠</span>地址:郑州市二七区升龙国际广场E座23号楼805室
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="./images/ewm.jpg" alt="" class="img-responsive">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p style="font-size: 12px;margin-top:5px">请扫描二维码关注官方微信公众号"蓝眸视觉"</p>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+  <div class="table2" style="margin-top: 20px;background: #fff">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <div class="row">
+            <div class="col-md-12">
+              <img src="./images/about_logo.png" alt="" class="img-responsive">
+            </div>
+            <div class="col-md-12">
+              <h5>线路介绍</h5>
+              <p>公司附近有47路、B13路、60路、K906路、4路公交车途径于大学路淮河路下车向南200米左右即到；另有地铁1号线至郑州火车站西出口乘坐52路至二七区委也可顺利到达。</p>
+            </div>
+            <div class="col-md-12">
+              <h5>请注意</h5>
+              <p>公司附近有47路、B13路、60路、K906路、4路公交车途径于大学路淮河路下车向南200米左右即到；另有地铁1号线至郑州火车站西出口乘坐52路至二七区委也可顺利到达。</p>
+            </div>
+          </div>
+        </div>
+      <div class="col-md-8 col-sm-12 col-xs-12" id="dituContent">
+      </div>
+    </div>
+  </div>
+  <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12">
+            <a href=""><img src="./images/ff_1.jpg" alt=""></a>
+          </div>
+          <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 fpd">
+            <div class="row">
+                <div class="col-md-12">
+                  <ul class="list-inline">
+                    <li><a href="">蓝眸首页</a></li>
+                    <li><a href="">友情链接</a></li>
+                    <li><a href="">关于我们</a></li>
+                    <li><a href="">服务内容</a></li>
+                    <li><a href="">联系我们</a></li>
+                  </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>京IC备XXXXXX</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+</html>
+<script>
+        var flag = 0;
+        $("#button").click(function(){
+            if (flag==0){
+                $(this).css("background","#ddd");
+                flag=1; 
+            }
+            else {
+                $(this).css("background","#0ecacb");
+                flag=0; 
+            }
+        })
+    </script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<script src="./百度地图.js"></script>
+
